@@ -1,6 +1,196 @@
-/******* Change Box Model ***************/
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Patua+One&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Patua One', serif;
+}
+
+/*header css */
+header {
+  display: flex;
+  flex-wrap: row nowrap;
+  justify-content: space-between;
+  min-height: 65px;
+}
+
+.siteName{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 950;
+  font-size: 1.7em;
+}
+
+.siteName a:link,.siteName a:visited, .siteName a:hover, .siteName a:active {
+  text-decoration: none;
+  color: #1F305D;
+}
+
+#tools a:link, :visited{
+  font-size: .85em;
+  color: #1F305D;
+  text-decoration: none;
+}
+
+#tools a:hover{
+  text-decoration: underline;
+}
+
+#tools a:active{
+  color: blue;
+  text-decoration: underline;
+}
+
+/*Nav Tags*/
+
+#navi {
+  background-color: #1F305D;
+  color: white;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+  min-height: 50px;
+}
+
+#navi ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+#navi ul a{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 50px;
+  align-items: center;
+  color: white;
+}
+
+#navi ul a li:hover, #navi ul a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+#navi ul a:active, #navi ul a:active{
+  text-decoration: underline;
+  color: white;
+  font-style: italic;
+}
+
+/*Main Tags*/
+
+main {
+  font-size: .8em;
+}
+
+#imgContainer {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#delorean{
+  width: 100%;
+}
+
+#overtext{
+  position: absolute;
+  top: 0;
+  width: 125px;
+  background: rgba(255, 255, 255, 0.589);
+  padding: 0;
+}
+
+#overtext > *{
+  margin-top: 0;
+  margin-bottom: 2px;
+  color: #617DC9;
+}
+
+#overtext button {
+  color: black;
+  background-color: #617DC9;
+  padding: 7px;
+  font-weight: bolder;
+}
+
+#reviews{
+  padding-inline-start: 15px;
+}
+
+#reviews li {
+  padding-bottom: 5px;
+}
+
+#boxes {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.imagebox{
+  background-color: #617DC9;
+  border: 1px solid black;
+  min-width: 120px;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagebox img {
+  margin: 5px;
+}
+
+.imagebox a p {
+  margin-block-start: 2px;
+}
+
+.boxen{
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Footer Tags*/
+
+footer{
+  font-size: .8em;
+}
+
+/*General Tags*/
+
+main, nav, header, footer{
+  font-family: 'Montserrat', sans-serif;
+  width: 95%;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/*Wrapper*/
+
+#wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+@media only screen and (min-width: 568px){
+
+}
+
+@media only screen and (min-width: 768px){
+  
 }
