@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6 {
 /*header css */
 header {
   display: flex;
-  flex-wrap: row nowrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
   min-height: 65px;
 }
@@ -62,7 +62,7 @@ header {
   height: 50px;
 }
 
-#navi ul a{
+#navi ul li{
   flex-grow: 1;
   display: flex;
   flex-direction: row;
@@ -72,12 +72,12 @@ header {
   color: white;
 }
 
-#navi ul a li:hover, #navi ul a:hover {
+#navi ul li a li:hover, #navi ul a:hover {
   color: white;
   text-decoration: underline;
 }
 
-#navi ul a:active, #navi ul a:active{
+#navi ul li a:active, #navi ul a:active{
   text-decoration: underline;
   color: white;
   font-style: italic;
@@ -188,9 +188,121 @@ main, nav, header, footer{
 
 
 @media only screen and (min-width: 568px){
+  h2 {
+    font-size: 2.2em;
+  }
+  #overtext{
+    position: absolute;
+    top: 0;
+    width: 220px;
+    background: rgba(255, 255, 255, 0.589);
+    padding: 0;
+  }
+  
+  #overtext > *{
+    margin-top: 0;
+    margin-bottom: 2px;
+    color: #617DC9;
+  }
 
+  #overtext p, #overtext button {
+    font-size: 1.8em;
+  }
+
+  #overtext h3 {
+    font-size: 2em;
+  }
+  
+  #overtext button {
+    color: black;
+    background-color: #617DC9;
+    padding: 7px;
+    font-weight: bolder;
+  }
 }
 
-@media only screen and (min-width: 768px){
-  
+@media only screen and (min-width: 840px){
+
+  body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../images/site/checkerboard.jpg");
+  }
+  #wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 85%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: white;
+    border: 4px solid #617DC9;
+    border-radius: 2px;
+  }
+
+  #top-header{
+    width: 100%;
+
+  }
+
+  #navi {
+    width: 100%;
+    margin-left: 7px;
+    margin-right: 7px;
+
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;   
+  }
+  #hwelcome{
+    width: 100%;
+    order: 1;
+  }
+  #imgContainer{
+    width: 100%;
+    order: 2;
+    margin-bottom: 15px;
+  }
+  #delorean {
+    width: 80%;
+  }
+  #hupgrades{
+    order: 3;
+    width: 50%;
+  }
+  #hreviews{
+    order: 4;
+
+    margin-left: 20px;
+  }
+  #boxes {
+    order: 5;
+    width: 50%;
+  }
+  #reviews{
+    order: 6;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+
+}
+@media only screen and (min-width: 1050px){
+  #reviews{
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+
+  h2{
+    font-size: 2.6em;
+  }
+
+  #wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
