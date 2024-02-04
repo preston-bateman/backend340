@@ -25,7 +25,7 @@ header {
   color: #1F305D;
 }
 
-#tools a:link, :visited{
+#tools a:link, #tools a:visited{
   font-size: .85em;
   color: #1F305D;
   text-decoration: none;
@@ -70,6 +70,11 @@ header {
   min-height: 50px;
   align-items: center;
   color: white;
+}
+
+#navi ul li a, #navi ul li a:visited{
+  color: white;
+  text-decoration: none;
 }
 
 #navi ul li a li:hover, #navi ul a:hover {
