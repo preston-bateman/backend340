@@ -24,9 +24,6 @@ Util.getNav = async function (req, res, next) {
   return list
 }
 
-
-
-
 /* **************************************
 * Build the classification view HTML
 * ************************************ */
@@ -60,4 +57,10 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
+/* **************************************
+* Saved space for error handling code
+* ************************************ */
+
+
+//exports the utility
 module.exports = Util
