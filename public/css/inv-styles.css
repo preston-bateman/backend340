@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Patua+One&display=swap');
+
+#inv-display {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+    padding: 0px;
+    align-items: center;
+}
+
+#inv-display li {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black ;
+    border-radius: 5%;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    height: 275px;
+}
+
+#inv-display li a{
+    height: 150px;
+}
+
+#inv-display li a img {
+    border-radius: 5%;
+}
+
+.namePrice {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.namePrice h2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 1.5em;
+}
+
+hr {
+    border: 3px solid black;
+    width: 194px;
+}
+
+@media only screen and (min-width: 568px){
+    #inv-display{
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+}
+
+@media only screen and (min-width: 840px){
+
+}
