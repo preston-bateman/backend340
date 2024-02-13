@@ -47,6 +47,21 @@ hr {
     width: 194px;
 }
 
+#details-wrapper {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dets {
+    padding: 1em;
+    background-color: white;
+}
+
+.grey {
+    background-color: lightgray;
+}
+
 @media only screen and (min-width: 568px){
     #inv-display{
         flex-direction: row;
@@ -57,5 +72,24 @@ hr {
 }
 
 @media only screen and (min-width: 840px){
+    #details-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    #detail-image {
+        width: 45%;
+        max-width: 100%;
+        height: auto;
+    }
 
+    #vehicle-details {
+        width: 50%;
+    }
+
+    #vehicle-details h2 {
+        margin-top: 0px;
+        font-size: 1.5em;
+    }
 }
