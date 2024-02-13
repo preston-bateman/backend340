@@ -58,6 +58,36 @@ Util.buildClassificationGrid = async function(data){
 }
 
 /* **************************************
+* Build the Details view HTML
+* ************************************ */
+Util.buildDetails = async function(data){
+  let details
+  if (data.length > 0) {
+    details = '<div id="details-wrapper">'
+    details += '<h2>' + data[0].inv_year + ' ' + data[0].inv_make + ' ' + data[0].inv_model + '</h2>'
+    details += '<div id="vehicle-box">'
+    details += '<img id="detail-image" src=" ' + data[0].inv_image + '" alt="picture of' + data[0].inv_year + ' ' + data[0].inv_make + ' ' + data[0].inv_model + '">'
+    details += '<div id="vehicle-details">'
+    details += '<h2>' + data[0].inv_make + ' ' + data[0].inv_model + ' Details</h2>'
+    details += '<div id="dets grey"><p><b>Price: ' + new Intl.NumberFormat('en-US').format(data[0].inv_price) + '</b></p>'
+    details += '</div>'
+    details += '<div id="dets white"><p><b>Description: </b>' + data[0].inv_description + '</p>'
+    details += '</div>'
+    details += '<div id="dets grey"><p><b>Color: </b>' + data[0].inv_color + '</p>'
+    details += '</div>'
+    details += '<div id="dets white"><p><b>Miles: </b>' + data[0].inv_miles + '</p>'
+    details += '</div>'
+    details += '</div>'
+    details += '</div>'
+    details += '</div>'
+  } else {
+    details += '<p class="notice">Sorry, this vehicle is no longer available.</p>'
+  }
+  return details
+}
+
+
+/* **************************************
 * Saved space for error handling code
 * ************************************ */
 
