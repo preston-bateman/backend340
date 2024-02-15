@@ -87,7 +87,7 @@ Util.buildDetails = async function(data){
 /* **************************************
 * Saved space for error handling code
 * ************************************ */
-
+Util.handleErrors = f => (req, res, next) => Promise.resolve(f(req, res, next)).catch(next)
 
 //exports the utility
 module.exports = Util

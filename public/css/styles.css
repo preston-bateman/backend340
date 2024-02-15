@@ -189,8 +189,25 @@ main, nav, header, footer{
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 80%;
 }
 
+.form-wrapper{
+  background-color: lightgray;
+  border: 3px solid #617DC9;
+  border-radius: 3px;
+  padding: 1em;
+  max-width: 275px;
+}
+
+label {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.under-login{
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
 
 @media only screen and (min-width: 568px){
   h2 {
@@ -233,7 +250,9 @@ main, nav, header, footer{
     flex-direction: column;
     align-items: center;
     background-image: url("../images/site/checkerboard.jpg");
+    height: 100%;
   }
+
   #wrapper{
     display: flex;
     flex-direction: row;
@@ -262,7 +281,9 @@ main, nav, header, footer{
   main {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;   
+    flex-wrap: wrap; 
+    align-items: flex-start;
+    justify-content: center;
   }
   #hwelcome{
     width: 100%;
@@ -282,7 +303,6 @@ main, nav, header, footer{
   }
   #hreviews{
     order: 4;
-
     margin-left: 20px;
   }
   #boxes {
@@ -295,6 +315,14 @@ main, nav, header, footer{
     margin-left: 20px;
   }
 
+  .top-title {
+    width: 100%;
+    height: 2em;
+  }
+
+  #login-wrapper {
+    margin-bottom: 200px;
+  }
 }
 @media only screen and (min-width: 1050px){
   #reviews{
@@ -310,4 +338,5 @@ main, nav, header, footer{
     padding-left: 10px;
     padding-right: 10px;
   }
+  
 }
