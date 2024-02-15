@@ -15,7 +15,7 @@
         <label for="account_email">Email Address</label><br>
         <input type="email" name="account_email" id="account_email" required><br><br>
         <label for="account_password">Password</label><br>
-        <input type="password" name="account_password" id="account_password" required><br>
+        <input type="password" name="account_password" id="account_password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required><br>
         <label class="subtext-form">* Must contain atleast 12 characters, 1 capital and lowercase letter,<br> 1 number, and 1 special character</label><br><br>
         <button>Register Now</button><br>
     </form>
