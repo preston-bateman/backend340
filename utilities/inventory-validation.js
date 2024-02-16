@@ -10,8 +10,9 @@ validate.classificationRules = () =>{
     return [
         body("classification_name")
             .trim()
-            .isLength({ min:1 })
-            .withMessage("Please Enter in a valid classification name")
+            .isLength({ min: 1 })
+            .withMessage("Please Enter in a valid classification name.")
+            .custom(value => !/\s/.test(value))
     ]
 }
 
