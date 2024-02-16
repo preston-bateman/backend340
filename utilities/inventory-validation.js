@@ -44,38 +44,84 @@ validate.inventoryRules = () => {
         body("inv_make")
             .trim()
             .isLength({ min: 3 })
-            .withMessage("Please enter a valid vehicle make."),
+            .withMessage("Enter a valid vehicle make."),
         body("inv_model")
             .trim()
             .isLength({ min: 3 })
-            .withMessage("Please enter a valid vehicle model."),
+            .withMessage("Enter a valid vehicle model."),
         body("inv_year")
             .trim()
             .isLength({ max: 4, min: 4 })
-            .withMessage("Please enter a valid vehicle year."),
+            .isInt({ min: 1890, max: 2025 })
+            .withMessage("Enter a valid vehicle year."),
         body("inv_description")
             .trim()
-            .isLength({ max: 150, min: 1 })
-            .withMessage("Please enter a valid vehicle description."),
+            .isLength({ max: 200, min: 1 })
+            .withMessage("Enter a valid vehicle description."),
         body("inv_image")
             .trim()
             .isLength({ min: 3 })
-            .withMessage("Please enter a valid vehicle image."),
+            .withMessage("Enter a valid vehicle image."),
         body("inv_thumbnail")
             .trim()
             .isLength({ min: 3 })
-            .withMessage("Please enter a valid vehicle thumbnail."),
+            .withMessage("Enter a valid vehicle thumbnail."),
         body("inv_price")
             .trim()
+            .isNumeric()
             .isLength({ min: 1 })
-            .withMessage("Please enter a valid vehicle price."),
+            .withMessage("Enter a valid vehicle price."),
         body("inv_miles")
             .trim()
+            .isNumeric()
             .isLength({ min: 1 })
-            .withMessage("Please enter a valid vehicle miles."),
+            .withMessage("Enter a valid vehicle miles."),
         body("inv_color")
             .trim()
             .isLength({ min: 1 })
-            .withMessage("Please enter a valid vehicle color."),
+            .withMessage("Enter a valid vehicle color."),
     ]
 }
+
+/*  **********************************
+ *  Check Inventory Data
+ * ********************************* */
+validate.checkInventoryData = async (req, res, next) => {
+    const {
+      inv_make,
+      inv_model,
+      inv_year,
+      inv_description,
+      inv_image,
+      inv_thumbnail,
+      inv_price,
+      inv_miles,
+      inv_color,
+    } = req.body;
+  
+    let errors = [];
+    errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      let nav = await utilities.getNav();
+      let selectList = await utilities.getClassifications();
+      res.render("./inventory/add-inventory", {
+        errors,
+        title: "Add Inventory",
+        nav,
+        selectList,
+        inv_make,
+        inv_model,
+        inv_year,
+        inv_description,
+        inv_image,
+        inv_thumbnail,
+        inv_price,
+        inv_miles,
+        inv_color,
+      });
+      return;
+    }
+    next();
+  };
+
+  module.exports = validate;
