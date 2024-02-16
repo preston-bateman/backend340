@@ -28,6 +28,7 @@ router.post(
 // Route to build add inventory view
 router.get("/add-inventory", utilities.handleErrors(invController.buildAddInventory))
 
+
 //Process the add inventory form
 router.post(
     "/add-inventory",

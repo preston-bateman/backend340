@@ -10,8 +10,7 @@ validate.classificationRules = () =>{
     return [
         body("classification_name")
             .trim()
-            .isLength({ min:2 })
-            .isAlpha()
+            .isLength({ min:1 })
             .withMessage("Please Enter in a valid classification name")
     ]
 }
@@ -24,12 +23,12 @@ validate.checkClassData = async (req, res, next) => {
     let errors = []
     errors = validationResult(req)
     if(!errors.isEmpty()) {
-        let nav = await utilities.nav()
+        let nav = await utilities.getNav()
         res.render("inventory/add-classification", {
             errors,
             title: "Add Classification",
             nav,
-            classification_name
+            classification_name,
         })
         return
     }
@@ -86,7 +85,7 @@ validate.inventoryRules = () => {
 /*  **********************************
  *  Check Inventory Data
  * ********************************* */
-validate.checkInventoryData = async (req, res, next) => {
+validate.checkInvData = async (req, res, next) => {
     const {
       inv_make,
       inv_model,
