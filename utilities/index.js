@@ -87,13 +87,15 @@ Util.buildDetails = async function(data){
 * Builds the classification list for add vehicle view
 * ************************************ */
 Util.getClassifications = async function (req, res, next) {
-  let data = invModel.getClassificationsById()
+  let data = await invModel.getClassifications()
+  console.log(data)
   let classSelector = '<select name="classification_id" id="classification_id>'
   data.rows.forEach((row) => {
     classSelector += '<option id="' + row.classification_id +'" value="' + row.classification_id + '">' + row.classification_name + '</option>'
-    classSelector += "</select>"
-    return classSelector
+    
   })
+  classSelector += "</select><br>"
+  return classSelector
 }
 
 /* **************************************

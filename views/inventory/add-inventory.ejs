@@ -16,17 +16,17 @@
 
   <div id="add-classification">
     <form id="add-inv-form" class="form-wrapper" action="/inv/add-inventory" method="post">
-        <h4>Note* All fields are <em>required.</em></h4>
-        <label for="classificationId">Vehicle Classification: </label><br>
+        <h4>*Note: All fields are <em>required.</em></h4>
+        <label for="classification_id">Vehicle Classification: </label><br>
         <%- classSelector %>
-        <label for="invMake">Vehicle Make:</label><br>
+        <label for="inv_make">Vehicle Make:</label><br>
         <input type="text" id="inv_make" name="inv_make" value="<%= locals.inv_make %>" required><br>
         <label for="inv_model">Vehicle Model:</label><br>
         <input type="text" id="inv_model" name="inv_model" value="<%= locals.inv_model %>" required><br>
         <label for="inv_year">Vehicle Year:</label><br>
         <input type="number" id="inv_year" name="inv_year" value="<%= locals.inv_year %>" min="1890" max="2025" required><br>
         <label for="inv_description">Description:</label><br>
-        <textarea id="inv_description" name="inv_description" value="<%= locals.inv_description %>" rows="6" cols="50" required></textarea><br>
+        <textarea id="inv_description" name="inv_description" value="<%= locals.inv_description %>" rows="6" cols="30" required></textarea><br>
         <label for="inv_image">Vehicle Image:</label><br>
         <input type="text" id="inv_image" name="inv_image" value="<%= locals.inv_image %>" required><br>
         <label for="inv_thumbnail">Vehicle Thumbnail:</label><br>

@@ -102,12 +102,12 @@ validate.checkInvData = async (req, res, next) => {
     errors = validationResult(req);
     if (!errors.isEmpty()) {
       let nav = await utilities.getNav();
-      let selectList = await utilities.getClassifications();
+      let classSelector = await utilities.getClassifications();
       res.render("./inventory/add-inventory", {
         errors,
         title: "Add Inventory",
         nav,
-        selectList,
+        classSelector,
         inv_make,
         inv_model,
         inv_year,
