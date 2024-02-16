@@ -167,6 +167,10 @@ main {
   align-items: center;
 }
 
+.subtext {
+  font-size: .8em;
+}
+
 /*Footer Tags*/
 
 footer{

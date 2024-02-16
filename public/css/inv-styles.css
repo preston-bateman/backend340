@@ -53,6 +53,10 @@ hr {
     flex-direction: column;
 }
 
+#classificationName {
+    margin-bottom: 5px;
+}
+
 .dets {
     padding: 1em;
     background-color: white;
@@ -60,6 +64,14 @@ hr {
 
 .grey {
     background-color: lightgray;
+}
+
+input:focus:valid {
+    background-color: rgba(0, 255, 0, 0.452);
+}
+
+input:focus:invalid {
+    background-color: rgba(255, 0, 0, 0.452);
 }
 
 @media only screen and (min-width: 568px){

@@ -26,8 +26,6 @@ invCont.buildByClassificationId = async function (req, res, next) {
 invCont.buildByInvId = async function (req, res, next) {
   const inv_id = req.params.invId
   const data = await invModel.getInvByInvId(inv_id)
-  console.log(inv_id)
-  console.log(data)
   const details = await utilities.buildDetails(data)
   let nav = await utilities.getNav()
   const name = `${data[0].inv_year} ${data[0].inv_make} ${data[0].inv_model}`
@@ -38,5 +36,61 @@ invCont.buildByInvId = async function (req, res, next) {
     errors: null,
   })
 }
+
+/* ***************************
+ *  Deliver inventory management view
+ * ************************** */
+invCont.buildManagement = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("./inventory/management", {
+    title: "Vehicle Management",
+    nav,
+    errors: null,
+  })
+}
+
+/* ***************************
+ *  Deliver add classification view
+ * ************************** */
+invCont.buildAddClassification = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("./inventory/add-classification", {
+    title: "Add New Classification",
+    nav,
+    errors: null,
+  })
+}
+
+/* ***************************
+ *  Adds new classification and handles errors
+ * ************************** */
+invCont.addClassification = async function (req, res) {
+  const { classification_name } = req.body
+  const addResult = await invModel.addClassification(classification_name)
+  let nav = await utilities.getNav()
+
+  if(addResult){
+    req.flash(
+      "notice",
+      `Congratulations, you\'ve added ${classification_name} to the site.`
+    )
+    res.status(201).render("./inventory/management", {
+      title: "Vehicle Management",
+      nav,
+      errors: null,
+    })
+  } else {
+    req.flash(
+      "notice",
+      "Sorry, that classification did not work. Try Again",
+      )
+      res.status(501).render("./inventory/add-classification", {
+        title: "Add Classification",
+        nav,
+        errors: null,
+      })
+  }
+}
+
 
 module.exports = invCont
